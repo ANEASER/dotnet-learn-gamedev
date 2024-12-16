@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Files\\.NET\\gamedev\\gamedev.csproj": {}
+    "C:\\WorkSpace\\WEB\\.NET\\dotnet-learn-gamedev\\gamedev.csproj": {}
   },
   "projects": {
-    "D:\\Files\\.NET\\gamedev\\gamedev.csproj": {
+    "C:\\WorkSpace\\WEB\\.NET\\dotnet-learn-gamedev\\gamedev.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Files\\.NET\\gamedev\\gamedev.csproj",
+        "projectUniqueName": "C:\\WorkSpace\\WEB\\.NET\\dotnet-learn-gamedev\\gamedev.csproj",
         "projectName": "gamedev",
-        "projectPath": "D:\\Files\\.NET\\gamedev\\gamedev.csproj",
-        "packagesPath": "C:\\Users\\anuda\\.nuget\\packages\\",
-        "outputPath": "D:\\Files\\.NET\\gamedev\\obj\\",
+        "projectPath": "C:\\WorkSpace\\WEB\\.NET\\dotnet-learn-gamedev\\gamedev.csproj",
+        "packagesPath": "C:\\Users\\anudaa\\.nuget\\packages\\",
+        "outputPath": "C:\\WorkSpace\\WEB\\.NET\\dotnet-learn-gamedev\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\anuda\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\anudaa\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -48,6 +48,16 @@
               "version": "[8.0.11, )"
             },
             "Microsoft.Data.Sqlite": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.0, )"
             },
