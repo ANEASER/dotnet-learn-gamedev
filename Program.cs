@@ -1,4 +1,5 @@
 using gamedev;
+using gamedev.Data;
 using gamedev.Dtos;
 using gamedev.Endpoints;
 
@@ -22,6 +23,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.MapGamesEndpoints();
+
 app.MigrateDatabase();
 
 app.Run();

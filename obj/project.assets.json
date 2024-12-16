@@ -5590,19 +5590,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\anudaa\\.nuget\\packages\\": {}
+    "C:\\Users\\anuda\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\WorkSpace\\WEB\\.NET\\dotnet-learn-gamedev\\gamedev.csproj",
+      "projectUniqueName": "D:\\Files\\.NET\\gamedev\\gamedev.csproj",
       "projectName": "gamedev",
-      "projectPath": "C:\\WorkSpace\\WEB\\.NET\\dotnet-learn-gamedev\\gamedev.csproj",
-      "packagesPath": "C:\\Users\\anudaa\\.nuget\\packages\\",
-      "outputPath": "C:\\WorkSpace\\WEB\\.NET\\dotnet-learn-gamedev\\obj\\",
+      "projectPath": "D:\\Files\\.NET\\gamedev\\gamedev.csproj",
+      "packagesPath": "C:\\Users\\anuda\\.nuget\\packages\\",
+      "outputPath": "D:\\Files\\.NET\\gamedev\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\anudaa\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\anuda\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
