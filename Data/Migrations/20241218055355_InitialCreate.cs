@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace gamedev.Data.Migrations
 {
     /// <inheritdoc />
@@ -44,6 +46,18 @@ namespace gamedev.Data.Migrations
                         column: x => x.GenreId1,
                         principalTable: "Genres",
                         principalColumn: "Id");
+                });
+
+            migrationBuilder.InsertData(
+                table: "Genres",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Action" },
+                    { 2, "Adventure" },
+                    { 3, "RPG" },
+                    { 4, "Simulation" },
+                    { 5, "Strategy" }
                 });
 
             migrationBuilder.CreateIndex(

@@ -11,8 +11,8 @@ using gamedev;
 namespace gamedev.Data.Migrations
 {
     [DbContext(typeof(GameStoreContext))]
-    [Migration("20241217104522_UpdateGameGenreRelationship")]
-    partial class UpdateGameGenreRelationship
+    [Migration("20241218055355_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,7 +26,11 @@ namespace gamedev.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("GenreId")
+                    b.Property<string>("GenreId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("GenreId1")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
@@ -41,7 +45,7 @@ namespace gamedev.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("GenreId");
+                    b.HasIndex("GenreId1");
 
                     b.ToTable("Games");
                 });
@@ -92,9 +96,7 @@ namespace gamedev.Data.Migrations
                 {
                     b.HasOne("gamedev.Entities.Genre", "Genre")
                         .WithMany()
-                        .HasForeignKey("GenreId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("GenreId1");
 
                     b.Navigation("Genre");
                 });
