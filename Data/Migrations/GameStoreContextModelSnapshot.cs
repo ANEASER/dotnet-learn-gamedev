@@ -23,11 +23,7 @@ namespace gamedev.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("GenreId")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<int?>("GenreId1")
+                    b.Property<int?>("GenreId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
@@ -42,7 +38,7 @@ namespace gamedev.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("GenreId1");
+                    b.HasIndex("GenreId");
 
                     b.ToTable("Games");
                 });
@@ -93,7 +89,7 @@ namespace gamedev.Data.Migrations
                 {
                     b.HasOne("gamedev.Entities.Genre", "Genre")
                         .WithMany()
-                        .HasForeignKey("GenreId1");
+                        .HasForeignKey("GenreId");
 
                     b.Navigation("Genre");
                 });
