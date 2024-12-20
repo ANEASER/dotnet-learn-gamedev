@@ -1,3 +1,11 @@
+# Ignore build directories
 bin/
 obj/
+
+# Ignore EF Core Migrations
 Data/Migrations/
+
+# Ignore SQLite database files
+games.db
+games.db-shm
+games.db-wal
