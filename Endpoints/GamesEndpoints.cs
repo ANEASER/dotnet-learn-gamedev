@@ -1,4 +1,6 @@
 using gamedev.Dtos;
+using gamedev.Entities;
+using gamedev.Mapping;
 
 namespace gamedev.Endpoints;
 
@@ -25,12 +27,16 @@ public static class GamesEndpoints
             return game is null ? Results.NotFound() : Results.Ok(game);
         }).WithName(GetGameByIdEndpointName);
 
-        group.MapPost("/", (CreateGameDto game) => {
-            if (string.IsNullOrWhiteSpace(game.Name)){return Results.BadRequest("Name is required");}
-            var newGame = new GameDto(games.Count + 1, game.Name, game.Genre, game.Price, game.ReleaseDate);
-            games.Add(newGame);
-            return Results.CreatedAtRoute(GetGameByIdEndpointName, new { id = newGame.Id }, newGame); 
-        }).WithParameterValidation();
+        group.MapPost("/", (CreateGameDto newGame, GameStoreContext dbContext) =>
+        {
+            Game game = newGame.ToEntity();
+            game.Genre = dbContext.Genres.Find(newGame.GenreId);
+
+            dbContext.Games.Add(game);
+            dbContext.SaveChanges();
+
+            return Results.CreatedAtRoute(GetGameByIdEndpointName, new { id = game.Id }, game.ToDto());
+        });
 
         group.MapPut("/{id}", (int id, UpdateGameDto updateGame) => {
             var index = games.FindIndex(game => game.Id == id);
